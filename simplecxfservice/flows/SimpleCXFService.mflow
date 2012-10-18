@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="SimpleCXFService">
+    <flow SubFlow="false" name="SimpleCXFServiceFlow1" entity-id="f8b8871f-82c2-4efc-bb53-ae56dfa7751f">
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="7289ebf6-6050-4743-87bc-1edf6d942b4f">
+            <endpoint message-exchange-pattern="RequestResponse" direction="Inbound" type="http://www.mulesoft.org/schema/mule/https/endpoint" name="HTTP" entity-id="23b3d090-fd56-419a-b446-0c27183982b6">
+                <properties>
+                    <property value="true" name="auxiliary;erased;contentType"/>
+                    <property value="true" name="auxiliary;erased;mimeType"/>
+                    <property value="" name="port"/>
+                    <property value="true" name="auxiliary;erased;host"/>
+                    <property value="" name="host"/>
+                    <property value="true" name="auxiliary;erased;port"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="false" name="keep-alive"/>
+                    <property value="" name="contentType"/>
+                    <property value="false" name="disableTransportTransformer"/>
+                    <property value="" name="password"/>
+                    <property value="request-response" name="exchange-pattern"/>
+                    <property value="" name="ref"/>
+                    <property value="" name="transformer-refs"/>
+                    <property value="" name="httpLabel"/>
+                    <property value="http://localhost:9090/simpleCXFService" name="address"/>
+                    <property value="true" name="auxiliary;erased;encoding"/>
+                    <property value="" name="path"/>
+                    <property value="" name="encoding"/>
+                    <property value="" name="responseTransformer-refs"/>
+                    <property value="" name="user"/>
+                    <property value="" name="mimeType"/>
+                    <property value="10000" name="responseTimeout"/>
+                    <property value="" name="connector-ref"/>
+                    <property name="updated"/>
+                </properties>
+                <description></description>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/cxf/soapComponent" name="SOAP" entity-id="853b16ca-1732-4d27-ad7f-1325fcc28ce8">
+                <properties>
+                    <property value="" name="port"/>
+                    <property value="" name="wsdlLocation"/>
+                    <property value="com.marco.tello.service.ISimpleCXFService" name="serviceClass"/>
+                    <property value="http://www.mulesoft.org/schema/mule/cxf/jaxws-service" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="" name="DATABINDING"/>
+                    <property value="" name="configuration-ref"/>
+                    <property value="" name="namespace"/>
+                    <property value="false" name="validationEnabled"/>
+                    <property value="true" name="auxiliary;erased;DATABINDING"/>
+                    <property value="" name="bindingId"/>
+                    <property value="" name="service"/>
+                    <property value="false" name="mtomEnabled"/>
+                    <property value="" name="propertiesLabel"/>
+                    <property value="true" name="enableMuleSoapHeaders"/>
+                    <property name="updated"/>
+                    <property-collection name="">
+                        <property value="true" name="auxiliary;erased;DATABINDING"/>
+                        <property value="" name="DATABINDING"/>
+                        <property value="" name="propertiesLabel"/>
+                    </property-collection>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/cxf/schemaLocations;16311095"/>
+                </properties>
+                <description></description>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="Java" entity-id="867cb961-4476-42fe-9256-1d6c5c7037de">
+                <properties>
+                    <property value="" name="ref"/>
+                    <property value="com.marco.tello.service.SimpleCXFService" name="class"/>
+                    <property name="updated"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/refInterceptorStackType;12195796">
+                        <property value="" name="ref"/>
+                    </property-collection>
+                </properties>
+                <description></description>
+            </pattern>
+        </lane>
+    </flow>
+    <description></description>
+</mule-configuration>
