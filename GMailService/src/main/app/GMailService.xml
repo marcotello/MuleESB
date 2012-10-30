@@ -20,13 +20,6 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	-->
 	<smtp:gmail-connector name="emailConnector"
 		doc:name="Gmail" />
-		
-	<!-- 
-	     We will need this custom transformer for change the String text into an Gmail protocol.
-	-->
-	<custom-transformer
-		class="org.mule.transport.email.transformers.StringToEmailMessage"
-		name="StringToEmail" doc:name="Java" />
 	
 	<!-- 
 	     The flows starts here
