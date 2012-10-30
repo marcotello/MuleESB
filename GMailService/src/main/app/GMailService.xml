@@ -15,28 +15,57 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd ">
 	
+	<!-- 
+	     The Gmail connector is part of connectors that Mule ESB offers out of the box.
+	-->
 	<smtp:gmail-connector name="emailConnector"
 		doc:name="Gmail" />
-	<custom-transformer class="com.marco.tello.transformer.StringToEmailTransformer"
-		name="OrderToEmail" doc:name="Java" />
+		
+	<!-- 
+	     We will need this custom transformer for change the String text into an Gmail protocol.
+	-->
 	<custom-transformer
 		class="org.mule.transport.email.transformers.StringToEmailMessage"
 		name="StringToEmail" doc:name="Java" />
+	
+	<!-- 
+	     The flows starts here
+	-->
 	<flow name="GMailService-configFlow1" doc:name="GMailService-configFlow1">
+	
+	<!-- 
+	    Configuring the HTTP inbound 
+	-->
 		<http:inbound-endpoint exchange-pattern="request-response"
 			address="http://localhost:9094/gmailService" doc:name="HTTP" />
+	
+	<!-- 
+	     In this block the SOAP CXF Service is configured. We need two java classes one is for
+	     set up the Simple Front end of the Web Service and the other one is for return the payload
+	     to the flow, in this case the mail that we want to send. 
+	-->
 		<cxf:jaxws-service serviceClass="com.marco.tello.gmail.service.IGmailService"
 			doc:name="IGmailService" enableMuleSoapHeaders="false"/>
 		<component class="com.marco.tello.gmail.service.GmailService" doc:name="GMailService" />
 		<object-to-string-transformer doc:name="Object to String" />
+		
+	<!-- 
+	     We generate a response for the SOAP Service.
+	-->
 		<response>
 			<set-payload value="Your Message has been sent."
 				doc:name="Set Payload" />
 		</response>
 		<logger message="******** #[payload]" level="INFO" doc:name="Logger" doc:description="Just for log the message to send"/>
 		<echo-component doc:name="Echo" />
+	<!-- 
+	     Setting the outbound 
+	     Note that the user has to be set up with an "%40" instead of "@" otherwise the 
+	     SMTP outbound wont work, and you'll have to do the same for the password all 
+	     the @'s wont wont work.   
+	-->
 		<smtps:outbound-endpoint host="smtp.gmail.com" user="your_address%40gmail.com"
 			password="THE_PASSWORD" from="your_gmail_user@gmail.com" subject="Email from Mule ESB"
-			transformer-refs="OrderToEmail StringToEmail" doc:name="Send notification email" to="your_address@some_domain.com" />
+			doc:name="Send notification email" to="your_address@some_domain.com" />
 	</flow>
 </mule>

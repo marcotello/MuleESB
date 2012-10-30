@@ -36,83 +36,66 @@
             <property name="mimeType"/>
             <property value="2" name="auxiliary;index"/>
             <property value="2" name="auxiliary;index"/>
-            <property value="com.marco.tello.transformer.StringToEmailTransformer" name="class"/>
-            <property value="2" name="auxiliary;index"/>
-            <property value="OrderToEmail" name="name"/>
-            <property value="2" name="auxiliary;index"/>
-            <property value="2" name="auxiliary;index"/>
-            <property value="2" name="auxiliary;index"/>
-        </properties>
-    </global-element>
-    <global-element type="http://www.mulesoft.org/schema/mule/core/custom-transformer" name="Java" entity-id="Java#2">
-        <properties>
-            <property name="returnClass"/>
-            <property name="ignoreBadInput"/>
-            <property name="encoding"/>
-            <property value="3" name="auxiliary;index"/>
-            <property name="mimeType"/>
-            <property value="3" name="auxiliary;index"/>
-            <property value="3" name="auxiliary;index"/>
             <property value="org.mule.transport.email.transformers.StringToEmailMessage" name="class"/>
-            <property value="3" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
             <property value="StringToEmail" name="name"/>
-            <property value="3" name="auxiliary;index"/>
-            <property value="3" name="auxiliary;index"/>
-            <property value="3" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
         </properties>
     </global-element>
-    <flow SubFlow="false" name="GMailService-configFlow1" entity-id="56e4c789-b1cd-4554-a79b-edd13af393c3">
+    <flow SubFlow="false" name="GMailService-configFlow1" entity-id="347869fd-0819-4339-bad1-d46cdf9beac9">
         <properties>
             <property name="processingStrategy2"/>
             <property name="processingStrategy"/>
-            <property value="4" name="auxiliary;index"/>
+            <property value="3" name="auxiliary;index"/>
             <property name="bussinessEventsLabel"/>
             <property name="tracking:enable-default-events"/>
-            <property value="4" name="auxiliary;index"/>
-            <property value="4" name="auxiliary;index"/>
-            <property value="4" name="auxiliary;index"/>
+            <property value="3" name="auxiliary;index"/>
+            <property value="3" name="auxiliary;index"/>
+            <property value="3" name="auxiliary;index"/>
         </properties>
         <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#1">
             <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="HTTP#1">
                 <properties>
                     <property value="one-way" name="exchange-pattern"/>
                     <property value="request-response" name="exchange-pattern"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                     <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                     <property name="httpLabel"/>
                     <property name="host"/>
                     <property name="port"/>
                     <property name="path"/>
                     <property name="method"/>
-                    <property value="5" name="auxiliary;index"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                     <property name="businessEventsLabel"/>
                     <property name="tracking:enable-default-events"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                     <property value="http://localhost:9094/gmailService" name="address"/>
                     <property name="encoding"/>
                     <property name="disableTransportTransformer"/>
                     <property name="mimeType"/>
                     <property name="responseTimeout"/>
                     <property name="followRedirects"/>
-                    <property value="5" name="auxiliary;index"/>
-                    <property value="5" name="auxiliary;index"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                     <property name="connector-ref"/>
                     <property name="ref"/>
                     <property name="transformer-refs"/>
                     <property name="responseTransformer-refs"/>
-                    <property value="5" name="auxiliary;index"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                     <property name="user"/>
                     <property name="password"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                     <property name="contentType"/>
                     <property name="keep-alive"/>
-                    <property value="5" name="auxiliary;index"/>
-                    <property value="5" name="auxiliary;index"/>
-                    <property value="5" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
+                    <property value="4" name="auxiliary;index"/>
                 </properties>
             </endpoint>
             <pattern type="http://www.mulesoft.org/schema/mule/cxf/soapComponent" name="IGmailService" entity-id="SOAP#1">
@@ -120,7 +103,7 @@
                     <property name="configuration-ref"/>
                     <property value="http://www.mulesoft.org/schema/mule/cxf/jaxws-service" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
                     <property name="configuration-ref"/>
-                    <property value="6" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
                     <property name="bindingId"/>
                     <property name="port"/>
                     <property name="namespace"/>
@@ -128,39 +111,39 @@
                     <property name="onException"/>
                     <property value="com.marco.tello.gmail.service.IGmailService" name="serviceClass"/>
                     <property name="validationEnabled"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
                     <property name="mtomEnabled"/>
                     <property name="wsdlLocation"/>
                     <property value="false" name="enableMuleSoapHeaders"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
-                    <property value="6" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
+                    <property value="5" name="auxiliary;index"/>
                 </properties>
             </pattern>
-            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="GMailService" entity-id="Java#3">
+            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="GMailService" entity-id="Java#2">
                 <properties>
-                    <property value="7" name="auxiliary;index"/>
-                    <property value="7" name="auxiliary;index"/>
-                    <property value="7" name="auxiliary;index"/>
+                    <property value="6" name="auxiliary;index"/>
+                    <property value="6" name="auxiliary;index"/>
+                    <property value="6" name="auxiliary;index"/>
                     <property value="com.marco.tello.gmail.service.GmailService" name="class"/>
-                    <property value="7" name="auxiliary;index"/>
-                    <property value="7" name="auxiliary;index"/>
-                    <property value="7" name="auxiliary;index"/>
+                    <property value="6" name="auxiliary;index"/>
+                    <property value="6" name="auxiliary;index"/>
+                    <property value="6" name="auxiliary;index"/>
                 </properties>
             </pattern>
             <pattern type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" name="Object to String" entity-id="Object to String#1">
@@ -168,22 +151,22 @@
                     <property name="returnClass"/>
                     <property name="ignoreBadInput"/>
                     <property name="encoding"/>
-                    <property value="8" name="auxiliary;index"/>
+                    <property value="7" name="auxiliary;index"/>
                     <property name="mimeType"/>
-                    <property value="8" name="auxiliary;index"/>
-                    <property value="8" name="auxiliary;index"/>
-                    <property value="8" name="auxiliary;index"/>
+                    <property value="7" name="auxiliary;index"/>
+                    <property value="7" name="auxiliary;index"/>
+                    <property value="7" name="auxiliary;index"/>
                 </properties>
             </pattern>
-            <response index="9" entity-id="response#1">
+            <response index="8" entity-id="response#1">
                 <compartment entity-id="compartment#1">
                     <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#2">
                         <pattern type="http://www.mulesoft.org/schema/mule/core/set-payload" name="Set Payload" entity-id="Set Payload#1">
                             <properties>
 <property value="Your Message has been sent." name="value"/>
-<property value="10" name="auxiliary;index"/>
-<property value="10" name="auxiliary;index"/>
-<property value="10" name="auxiliary;index"/>
+<property value="9" name="auxiliary;index"/>
+<property value="9" name="auxiliary;index"/>
+<property value="9" name="auxiliary;index"/>
                             </properties>
                         </pattern>
                     </lane>
@@ -194,18 +177,18 @@
                     <property value="******** #[payload]" name="message"/>
                     <property value="INFO" name="level"/>
                     <property name="category"/>
-                    <property value="11" name="auxiliary;index"/>
-                    <property value="11" name="auxiliary;index"/>
-                    <property value="11" name="auxiliary;index"/>
+                    <property value="10" name="auxiliary;index"/>
+                    <property value="10" name="auxiliary;index"/>
+                    <property value="10" name="auxiliary;index"/>
                 </properties>
                 <description>Just for log the message to send</description>
             </pattern>
             <pattern type="org.mule.tooling.ui.modules.core.pattern.echo" name="Echo" entity-id="Echo#1">
                 <properties>
-                    <property value="12" name="auxiliary;index"/>
-                    <property value="12" name="auxiliary;index"/>
-                    <property value="12" name="auxiliary;index"/>
-                    <property value="12" name="auxiliary;index"/>
+                    <property value="11" name="auxiliary;index"/>
+                    <property value="11" name="auxiliary;index"/>
+                    <property value="11" name="auxiliary;index"/>
+                    <property value="11" name="auxiliary;index"/>
                 </properties>
             </pattern>
             <endpoint message-exchange-pattern="OneWay" direction="Outbound" type="http://www.mulesoft.org/schema/mule/smtps/endpoint" name="Send notification email" entity-id="SMTP#1">
@@ -215,35 +198,35 @@
                     <property name="port"/>
                     <property value="your_address%40gmail.com" name="user"/>
                     <property value="THE_PASSWORD" name="password"/>
-                    <property value="13" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
                     <property value="your_address@some_domain.com" name="to"/>
                     <property value="your_gmail_user@gmail.com" name="from"/>
                     <property value="Email from Mule ESB" name="subject"/>
                     <property name="cc"/>
                     <property name="bcc"/>
                     <property name="replyTo"/>
-                    <property value="13" name="auxiliary;index"/>
-                    <property value="13" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
                     <property name="businessEventsLabel"/>
                     <property name="tracking:enable-default-events"/>
-                    <property value="13" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
                     <property name="address"/>
                     <property name="responseTimeout"/>
                     <property name="encoding"/>
                     <property name="disableTransportTransformer"/>
                     <property name="mimeType"/>
-                    <property value="13" name="auxiliary;index"/>
-                    <property value="13" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
                     <property name="connector-ref"/>
                     <property name="ref"/>
-                    <property value="OrderToEmail StringToEmail" name="transformer-refs"/>
-                    <property value="13" name="auxiliary;index"/>
-                    <property value="13" name="auxiliary;index"/>
+                    <property name="transformer-refs"/>
+                    <property value="12" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
                     <property value="http://www.mulesoft.org/schema/mule/smtps/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
-                    <property value="13" name="auxiliary;index"/>
-                    <property value="13" name="auxiliary;index"/>
-                    <property value="13" name="auxiliary;index"/>
-                    <property value="13" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
+                    <property value="12" name="auxiliary;index"/>
                 </properties>
             </endpoint>
         </lane>
