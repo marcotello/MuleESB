@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:smtps="http://www.mulesoft.org/schema/mule/smtps" xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="CE-3.3.0"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd 
+http://www.mulesoft.org/schema/mule/smtps http://www.mulesoft.org/schema/mule/smtps/current/mule-smtps.xsd 
+http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd ">
+	
+	<smtp:gmail-connector name="emailConnector"
+		doc:name="Gmail" />
+	<custom-transformer class="com.marco.tello.transformer.StringToEmailTransformer"
+		name="OrderToEmail" doc:name="Java" />
+	<custom-transformer
+		class="org.mule.transport.email.transformers.StringToEmailMessage"
+		name="StringToEmail" doc:name="Java" />
+	<flow name="GMailService-configFlow1" doc:name="GMailService-configFlow1">
+		<http:inbound-endpoint exchange-pattern="request-response"
+			address="http://localhost:9094/gmailService" doc:name="HTTP" />
+		<cxf:jaxws-service serviceClass="com.marco.tello.gmail.service.IGmailService"
+			doc:name="IGmailService" enableMuleSoapHeaders="false"/>
+		<component class="com.marco.tello.gmail.service.GmailService" doc:name="GMailService" />
+		<object-to-string-transformer doc:name="Object to String" />
+		<response>
+			<set-payload value="Your Message has been sent."
+				doc:name="Set Payload" />
+		</response>
+		<logger message="******** #[payload]" level="INFO" doc:name="Logger" doc:description="Just for log the message to send"/>
+		<echo-component doc:name="Echo" />
+		<smtps:outbound-endpoint host="smtp.gmail.com" user="your_address%40gmail.com"
+			password="THE_PASSWORD" from="your_gmail_user@gmail.com" subject="Email from Mule ESB"
+			transformer-refs="OrderToEmail StringToEmail" doc:name="Send notification email" to="your_address@some_domain.com" />
+	</flow>
+</mule>
