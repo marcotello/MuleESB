@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-project xmlns="http://www.mulesoft.com/tooling/project" runtimeId="org.mule.servers.3.3.0.CE">
+    <name>MuleAlive</name>
+    <description>This project presents the Mule Start Page that shows the version and the projects deployed in Mule ESB</description>
+</mule-project>

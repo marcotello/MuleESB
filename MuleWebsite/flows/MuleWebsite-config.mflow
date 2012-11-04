@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="MuleAlive">
+    <global-unknown index="1" description="true" entity-id="global-unknown#1">
+        <content>&lt;description xmlns=&quot;http://www.mulesoft.org/schema/mule/core&quot;&gt; This project presents the Mule Start Page that shows the
+		version and the projects deployed in Mule ESB.&lt;/description&gt;</content>
+    </global-unknown>
+    <global-element type="http://www.mulesoft.org/schema/mule/jetty/connector" name="Jetty" entity-id="Jetty#1">
+        <properties>
+            <property value="Jetty" name="name"/>
+            <property name="configFile"/>
+            <property name="useContinuations"/>
+            <property name="resourceBase"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="2" name="auxiliary;index"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/jetty/webapps;0">
+                <property value="8093" name="port"/>
+                <property value="localhost" name="host"/>
+                <property value="${app.home}/webapps" name="directory"/>
+                <property value="3" name="auxiliary;wrapIn"/>
+                <property value="3" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+        <description>This is the conector to Jetty server</description>
+    </global-element>
+    <description></description>
+</mule-configuration>

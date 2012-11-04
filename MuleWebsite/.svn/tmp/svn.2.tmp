@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="MuleAlive">
+    <global-element type="http://www.mulesoft.org/schema/mule/jetty/connector" name="Jetty" entity-id="b3f56ff4-b6ea-48a1-afcb-dd8b99533206">
+        <properties>
+            <property value="Jetty" name="name"/>
+            <property name="configFile"/>
+            <property name="useContinuations"/>
+            <property name="resourceBase"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/jetty/webapps;0">
+                <property value="8093" name="port"/>
+                <property value="10.1.120.62" name="host"/>
+                <property value="${app.home}/webapps" name="directory"/>
+            </property-collection>
+        </properties>
+        <description>This is the conector to Jetty server</description>
+    </global-element>
+    <description></description>
+</mule-configuration>

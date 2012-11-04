@@ -1,0 +1,101 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<!-- The new doctype -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Mule ESB 3.3.0</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="shortcut icon" href="img/esb.ico" />
+		<!-- Internet Explorer HTML5 enabling code: -->
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+		<style type="text/css">
+		.clear {
+		zoom: 1;
+		display: block;
+		}
+		</style>
+
+		<![endif]-->
+	</head>
+	<body>
+		<section id="page">
+			<!-- Defining the #page section with the section tag -->
+			<header>
+				<!-- Defining the header section of the page with the appropriate tag -->
+				<hgroup id="logo">
+					<a href="http://10.1.120.62:8093/mule"><img src="img/MuleESB.png" alt="Mule ESB 3.3.0" /></a>
+					<h3>Mule ESB 3.3.0 is up and kicking</h3>
+				</hgroup>
+				<nav class="clear">
+					<!-- The nav link semantically marks your main site navigation -->
+					<ul>
+						<li>
+							<a href="#article1">Projects</a>
+						</li>
+						<li>
+							<a href="#article2">Statics</a>
+						</li>
+						<li>
+							<a href="#article3">Alerts</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<section id="articles">
+				<!-- A new section with the articles -->
+				<!-- Article 1 start -->
+				<!-- <div class="line"></div> -->
+				<!-- Dividing line -->
+				<article id="article1">
+					<!-- The new article tag. The id is supplied so it can be scrolled into view. -->
+					<h2>Grupo Vidanta's Mule ESB 3.3.0</h2>
+					<div class="line"></div>
+					<div class="articleBody clear">
+						<figure>
+							<!-- The figure tag marks data (usually an image) that is part of the article -->
+							<img src="http://www.grupovidanta.com/images/logo.gif" />
+						</figure>
+						<p>
+							Mule ESB is the SOA key in hotel application integration, adding route, virtualize endpoints and transformation capabilities. 
+						</p>
+						<p>
+							For more information, suggestions or comments please refer to:
+							<ul>
+								<li>
+									Cesar Soto <a href="#">cesarsoto@grupovidanta.com</a>
+								</li>
+								<li>
+									Marco Tello. <a href="#">marcotello@grupovidanta.com</a>
+								</li>
+							</ul>
+						</p>
+					</div>
+				</article>
+				<!-- Article 1 end -->
+			</section>
+			<footer>
+				<!-- Marking the footer section -->
+				<div class="line"></div>
+				<p>
+					Grupo Vidanta - 2012
+				</p>
+				<!-- Change the copyright notice
+				<a href="#" class="up">Go UP</a>
+				<a href="http://tutorialzine.com/2010/02/html5-css3-website-template/" class="by">Template by Tutorialzine</a> 
+				<a href="http://www.mulesoft.org/" class="up"><img src="img/mulehead_large.png" height="45" width="45" alt="" /></a> -->
+				<a href="http://www.w3.org/html/logo/" class="up">
+                 	<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="116" height="45" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+				</a>
+				<a href="http://www.grupovidanta.com/es/index.html" class="by"><img src="img/vidantaStar.png" alt="" /></a>
+			</footer>
+		</section>
+		<!-- Closing the #page section -->
+		<!-- JavaScript Includes -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script src="jquery.scrollTo-1.4.2/jquery.scrollTo-min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

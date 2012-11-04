@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:jetty="http://www.mulesoft.org/schema/mule/jetty"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.3.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/jetty http://www.mulesoft.org/schema/mule/jetty/current/mule-jetty.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd ">
+	<description> This project presents the Mule Start Page that shows the
+		version and the projects deployed in Mule ESB.</description>
+	<jetty:connector name="Jetty" doc:name="Jetty"
+		doc:description="This is the conector to Jetty server">
+		<jetty:webapps port="8093" host="localhost" directory="${app.home}/webapps" />
+	</jetty:connector>
+</mule>

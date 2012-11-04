@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="MuleAlive">
+    <flow SubFlow="false" name="MuleAliveFlow1">
+        <properties>
+            <property value="" name="processingStrategy2"/>
+        </properties>
+        <description></description>
+        <lane hadOnlyOneElement="false" entity-id="d7971808-4cb3-4766-a062-455ec25aed9f">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="b9dc178d-e3e8-4cd8-9be2-d8d84398b400">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="request-response" name="exchange-pattern"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property name="httpLabel"/>
+                    <property name="host"/>
+                    <property name="port"/>
+                    <property name="path"/>
+                    <property name="method"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="http://localhost:8093/mule" name="address"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="followRedirects"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="user"/>
+                    <property name="password"/>
+                    <property name="contentType"/>
+                    <property name="keep-alive"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/set-payload" name="Set Payload" entity-id="ef4e2889-ec4e-453c-b9b1-7e8b29eaf91a">
+                <properties>
+                    <property value="&lt;html&gt;&lt;head&gt;&lt;title&gt;Mule ESB 3.3.0&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h2&gt;Mule ESB 3.3.0 is up and kicking ...&lt;h2&gt;&lt;br /&gt;&lt;img src='http://4.bp.blogspot.com/-b83YPNXbtjw/T2_GLl6KIUI/AAAAAAAAAwQ/zHTj8hyGk3M/s1600/MuleESB.png' alt='Mule ESB 3.3.0' /&gt;&lt;br /&gt;&lt;br /&gt;&lt;img src='http://www.grupovidanta.com/images/logo.gif' alt='Grupo Vidanta' /&gt;&lt;/body&gt;" name="value"/>
+                </properties>
+                <description></description>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/http/response-builder" name="HTTP Response Builder" entity-id="aebdc505-6c82-4849-a4a7-e9345a3cd098">
+                <properties>
+                    <property value="200" name="status"/>
+                    <property value="text/html" name="contentType"/>
+                    <property name="cookiesLabel"/>
+                    <property name="cookiesLabel"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <description></description>
+</mule-configuration>

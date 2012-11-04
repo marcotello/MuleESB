@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="CE-3.3.0" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd ">
+    <flow name="MuleAliveFlow1" doc:name="MuleAliveFlow1">
+        <http:inbound-endpoint exchange-pattern="request-response" address="http://localhost:8093/mule" doc:name="HTTP"/>
+        <set-payload value="&lt;html&gt;&lt;head&gt;&lt;title&gt;Mule ESB 3.3.0&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h2&gt;Mule ESB 3.3.0 is up and kicking ...&lt;h2&gt;&lt;br /&gt;&lt;img src='http://4.bp.blogspot.com/-b83YPNXbtjw/T2_GLl6KIUI/AAAAAAAAAwQ/zHTj8hyGk3M/s1600/MuleESB.png' alt='Mule ESB 3.3.0' /&gt;&lt;br /&gt;&lt;br /&gt;&lt;img src='http://www.grupovidanta.com/images/logo.gif' alt='Grupo Vidanta' /&gt;&lt;/body&gt;" doc:name="Set Payload"/>
+        <http:response-builder status="200" contentType="text/html" doc:name="HTTP Response Builder"/>
+    </flow>
+</mule>
