@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+	xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="CE-3.3.0"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd 
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/ajax http://www.mulesoft.org/schema/mule/ajax/current/mule-ajax.xsd ">
+	<file:connector name="FileConnector" autoDelete="true"
+		streaming="false" validateConnections="true" doc:name="File">
+		<file:expression-filename-parser />
+	</file:connector>
+	<flow name="xsltTransformation-configFlow1" doc:name="xsltTransformation-configFlow1">
+		<file:inbound-endpoint responseTimeout="10000"
+			doc:name="FileInput" connector-ref="FileConnector" path="./file-input-directory">
+			<file:filename-wildcard-filter pattern="*.xml" />
+		</file:inbound-endpoint>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+		<mulexml:xslt-transformer
+			maxIdleTransformers="2" maxActiveTransformers="5"
+			xsl-file="src/main/resources/xslt/transform.xsl" doc:name="XSLT" />
+		<file:outbound-endpoint path="./file-output-directory"
+			responseTimeout="10000" doc:name="FileOutput"
+			outputPattern="#[function:datestamp]-#[header:originalFilename]" />
+	</flow>
+</mule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<Reservation>
+     <reservation id="123456789" />
+     <arrivingDate>03-09-2012</arrivingDate>
+     <departureDate>03-15-2012</departureDate>
+     <guestName>Fred</guestName>
+     <guestLastName>Davis</guestLastName>
+     <hotelID>03</hotelID>
+     <room>1001</room>
+     <oceanView>true</oceanView>
+     <smokingArea>false</smokingArea>
+</Reservation>
